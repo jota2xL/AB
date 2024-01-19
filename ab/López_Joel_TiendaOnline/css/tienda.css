@@ -1,0 +1,131 @@
+.articles {
+    width: 100%;
+}
+
+.articles__title {
+    margin: 10px 20px;
+    font-size: max(20px, 2vw);
+    color: #fff;
+}
+
+.articles-flex {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.articles-flex__article {
+    /* display: flex; */
+    border-radius: 20px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px 10px;
+    overflow: hidden;
+    width: 19%;
+    flex: 1 1 auto;
+    height: auto;
+    max-width: 300px;
+    min-width: 200px;
+    background-color: rgb(192, 238, 107);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.articles-flex__article__title {
+    padding: 5px 4px;
+}
+
+.articles-flex__article__price {
+    font-size: max(12px, 1vw);
+    padding: 10px 4px;
+}
+
+.articles-flex__article__link {
+    padding: 5px 4px;
+    opacity: 1;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    border-radius: 5px;
+    font-size: max(14px, 1.1vw);
+    /* padding: 1.3vw 2vw; */
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.articles-flex__article__img {
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.articles-flex__article__link:hover {
+    background-color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
+.first {
+    margin-bottom: 40px;
+}
+
+.shop-footer {
+    margin-top: 10px;
+    padding: 20px 0;
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-flex--1 {
+    width: 30%;
+}
+
+.footer-flex--2 {
+    width: 45%;
+}
+
+.footer-flex--1__title {
+    margin: 0 0 20px 0;
+    font-size: max(20px, 1.3vw);
+}
+
+.footer-flex--2__title {
+    margin: 0 0 20px 0;
+    font-size: max(20px, 1.3vw);
+}
+
+.footer-flex--1__link {
+    text-decoration: none;
+    color: #bbb;
+}
+
+.footer-flex--1__link:hover {
+    text-decoration: underline;
+}
+
+.footer-flex--2__ubication {
+    color: #bbb;
+}
+
+.footer-flex--1__link > img, .footer-flex--2__ubication > img {
+    width: 20px;
+    position: relative;
+    top: 4px;
+}
+
+.footer-subflex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

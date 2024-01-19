@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html {
+    background-image: url("https://cdn.discordapp.com/attachments/823245667916578857/1163558481463357541/viejo-fondo-negro-textura-grunge-papel-tapiz-oscuro-pizarra-pizarra-pared-habitacion.jpg?ex=65400347&is=652d8e47&hm=c9a64625d60ff6c921a427fe2f2b6369f65ec2299b2ebb79fc06d18f18507c96&");
+    background-repeat: no-repeat; background-attachment: fixed;
+ }
+.menu {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;  
+    background-color: rgb(0, 0, 0); 
+    width: 100%;
+
+}
+
+
+.menu__link {
+    /*flex-grow: 1;
+    */
+    padding: 20px;
+    font-size: max(20px, 1.4vw);
+    text-decoration: none;
+    font-weight: 700;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    margin: 0 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.menu__link:hover {
+    background-color:#222;
+    text-decoration: underline;
+}
+
+.navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;  
+    background-color: rgb(192, 238, 107); 
+    width: 100%;
+    animation: menu 4s;
+    -webkit-animation: menu linear 2s;
+}
+
+.navbar__link {
+    /*flex-grow: 1;*/
+    padding: 7px;
+    font-size: max(12px, 0.8vw);
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    width: 70%;
+    /*background-color: ;*/
+    text-align: center;
+    align-self: center;
+    margin: 0 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.menu__logo {
+    cursor: pointer;
+}
+
+.navbar__link:hover {
+    background-color: #aaa;
+    text-decoration: underline;
+}
+

@@ -1,0 +1,240 @@
+.collage, .favorite-grid, .inspiration-grid {
+    padding: 10px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.collage__article, .collage__article--main, .favorite-grid__article, .inspiration-grid__article {
+    /* height: 100%;
+    width: 100%; */
+    border: 5px solid black;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 15px;
+    background-color:rgb(192, 238, 107);
+}
+
+.collage__article__title, .favorite-grid__article__title, .inspiration-grid__article__title {
+    margin: 10px;
+    font-size: max(20px, 2vw);
+}
+
+.collage__article__link, .favorite-grid__article__link, .inspiration-grid__article__link {
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.collage__article__link:hover, .favorite-grid__article__link:hover, .inspiration-grid__article__link:hover {
+    background-color:#fff
+}
+
+.collage__article--main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    grid-column: 1 / span 3;
+    height: 33vw;
+    width: 100%;
+    background-origin: border-box;
+    background-size: cover;
+    background-image: url("https://www.townoffrisco.com/wp-content/uploads/2021/06/2560x864-CIP.jpg");
+}
+.collage__article--main__title {
+    margin: 15px;
+    font-size: max(20px, 4vw);
+    color: #fff;
+}
+
+.collage__article--main__link  {
+    background-color:rgb(192, 238, 107);
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    border-radius: 5px;
+    font-size: max(10px, 1.5vw);
+    padding: 1.3vw 2vw;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.collage__article--main__link:hover {
+    background-color: #ddd;
+}
+
+.brands-container {
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.brands-container__link {
+    flex: 1 1 auto;
+    width: 250px;
+    /* height: calc(auto -10px); */
+    background-size: contain;
+    max-width: 350px;
+    border: 3px solid rgb(0, 0, 0);
+    background-size: contain;
+}
+
+.brands-container__link img {
+    width: 100%;
+}
+
+.trending__container {
+    background-image: url("https://sfcd.es/wp-content/uploads/2021/09/Estadio_Color-1-scaled.jpg");
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: max(20px, 2vw);
+    justify-content: center;
+    height: max(200px, 34vw);
+    background-size: contain;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.trending__container__title {
+    font-size: max(10px, 2.5vw);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.trending__container__link {
+    background-color: black;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.trending__container__link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: rgb(192, 238, 107);
+}
+
+.favorite__title, .inspiration__title, .category__title {
+    color: white;
+    font-size: max(20px, 1.7vw);
+    margin: 10px;
+
+}
+
+.category-flex {
+    display: flex; 
+    padding: 10px;
+    width: 100%;
+    column-gap: 10px;
+}
+
+.category-flex__img {
+    width: 100%;
+}
+
+.category-flex__title {
+    color: white;
+    text-align: center;
+    margin: 5px;
+}
+
+.footer {
+    padding: 15px;
+    background-color: #000;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.footer__location__map {
+    height: 350px;
+    margin-top: 10px;
+    border: 10px solid black;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.footer_contact__form { 
+    max-width: 420px; 
+    margin: 20px auto; }
+
+
+.form-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #aaa;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.form-input:focus { border:2px solid #aaa; }
+
+.form-textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+.form_submit {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#aaa;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+.form_submit:hover { 
+    background:#0044ff; 
+}
+
+@keyframes menu {
+    from {
+        position: relative;
+        top: -100px;
+        z-index: -10;
+    }
+    to {
+        position: relative;
+        top: 0px;
+        z-index: -10;
+    }
+}
