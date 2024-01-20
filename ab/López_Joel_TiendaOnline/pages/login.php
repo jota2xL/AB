@@ -1,17 +1,7 @@
 <?php
-// Variables
-$hostDB = '127.0.0.1';
-$nombreDB = 'ab';
-$usuarioDB = 'root';
-$contrasenyaDB = 'Luamomo12#';
-// Conecta con base de datos
-$hostPDO = "mysql:host=$hostDB;dbname=$nombreDB;";
-$miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
-// Prepara SELECT
-// $miConsulta = $miPDO->prepare('SELECT * FROM programa;');
-// // Ejecuta consulta
-// $miConsulta->execute();
-
+if (!isset($_SESSION)) {
+    session_start();
+} 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,6 +10,29 @@ $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Inicio de Sesión</title>
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        function mostrarPopup(isLogingSuccess) {
+            var popup = document.getElementById('miPopup');
+            popup.style.display = 'block';
+            if (isLogingSuccess == true) {
+                sleep(2000).then(volverIndex);
+            }
+            else {
+                sleep(2000).then(esconderPopup);
+            }
+
+        }
+        function volverIndex() {
+            window.location.replace("../index.php");
+        }
+        function esconderPopup() {
+            var popup = document.getElementById('miPopup');
+            popup.style.display = 'none';
+        }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,6 +44,13 @@ $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
             justify-content: center;
             height: 100vh;
         }
+
+        a {
+            color: rgb(192, 238, 107);
+
+        }
+
+
 
         form {
             background-color: #fff;
@@ -53,8 +73,8 @@ $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
         }
 
         button {
-            background-color: #4caf50;
-            color: #fff;
+            background-color: rgb(192, 238, 107);
+            color: #000000;
             padding: 10px 15px;
             border: none;
             border-radius: 4px;
@@ -64,23 +84,80 @@ $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
         button:hover {
             background-color: #45a049;
         }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgb(192, 238, 107);
+            /* Verde */
+            border: 2px solid #2c3e50;
+            /* Negro */
+            border-radius: 5px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        /* Estilo del botón */
+        .popup button {
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            /* Negro */
+            color: #ecf0f1;
+            /* Gris claro */
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        /* Estilo del botón al pasar el ratón */
+        .popup button:hover {
+            background-color: #34495e;
+            /* Gris más oscuro */
+        }
     </style>
 </head>
 
 <body>
-    <?php if (isset($_POST['boton1'])) {
-        echo "este boton funciona";
-    }
-     ?>
-    <form method="post">
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
+    <form action="procesar_login.php" method="post">
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required>
 
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" required>
 
         <button name="boton1" type="submit">Iniciar Sesión</button>
+        <a name="boton2" href="registro.php">Registrarse</a>
     </form>
+
+    <div id="miPopup" name="miPopup" class="popup">
+        <?php
+        if (isset($_SESSION['usserLoged']) && $_SESSION['usserLoged'] === true) {
+            echo "<h1>login succes</h1>";
+        } else {
+            echo "<h1>login error</h1>";
+        }
+
+        ?>
+
+    </div>
+    <?php
+    if (isset($_SESSION['usserLoged'])) {
+        $loginCorrecto = $_SESSION['usserLoged'];
+        echo "<script>mostrarPopup($loginCorrecto)</script>";
+        if ($loginCorrecto === false) {
+            $_SESSION["usserLoged"] = null;
+        }
+    }
+
+    ?>
+
+
+
+
 </body>
 
 </html>
