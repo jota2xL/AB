@@ -48,7 +48,7 @@ $loginCorrecto = false;
         <div class="navbar">
             <a href="#" class="navbar__link">English</a>
             <a href="#" class="navbar__link">Encontrar una tienda</a>
-            <a href="#" class="navbar__link">Atención al cliente</a>
+            <a href="pages/carrito.php" class="navbar__link">Carrito</a>
         </div>
         <div class="ads">
     </header>
