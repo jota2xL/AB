@@ -1,4 +1,6 @@
 <?php
+// siempre que quieras trabajar con una sesión tienes que definirla primero,
+//  con el session_start mas que definirla es para poder trabajar con ella(es decir que el archivo php trabajara con sesiones)
 if (!isset($_SESSION)) {
     session_start();
 } 
@@ -11,11 +13,17 @@ if (!isset($_SESSION)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Inicio de Sesión</title>
     <script>
+        // definimos la función sleep para que el proceso se para durante 'x' tiempo y por parametro le pasamos una variable
+        // en la linea de abajo definimos que va devolver un objeto que se llama promesa para que el espere unos milisegundos
+        // este objeto promesa nos permite hacer una llamada con delay,
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
+        // mostrar recibe por parametro un buleano islloginsucces
         function mostrarPopup(isLogingSuccess) {
+            // document es una clase de javaScript que me permite acceder a las etiquetas y variables de un arbol DOM
             var popup = document.getElementById('miPopup');
+            //el pop up pasa de tener un display none a un block
             popup.style.display = 'block';
             if (isLogingSuccess == true) {
                 sleep(2000).then(volverIndex);
@@ -122,6 +130,8 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
+    <!-- el post es un tipo de peteción http en la que estamos pasando en la request una serie de datos en vez de pasarla
+    en una url como en get -->
     <form action="procesar_login.php" method="post">
         <label for="dni">DNI:</label>
         <input type="text" id="dni" name="dni" required>
@@ -135,6 +145,7 @@ if (!isset($_SESSION)) {
 
     <div id="miPopup" name="miPopup" class="popup">
         <?php
+        // una vez la persona haya iniciado un login en la sesión le decimos que muestre el pop de una manera u otra
         if (isset($_SESSION['usserLoged']) && $_SESSION['usserLoged'] === true) {
             echo "<h1>login succes</h1>";
         } else {

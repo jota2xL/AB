@@ -1,8 +1,10 @@
 <?php
+// las variable globales son para que el scope de la variablesea mas amplio
 global $listaObjetosCarrito;
 global $totalCarrito;
 function totalObjetosCarrito($carrito)
 {
+    // para la suma del total en el carrito precio*objeto y suma de totales
     $total = 0;
     if (isset($carrito)) {
         foreach ($carrito as $clave => $objeto) {
@@ -13,6 +15,7 @@ function totalObjetosCarrito($carrito)
 }
 function isUsserConnected()
 {
+    // si no existe el logeo o si el login a sido fallido asi evitamos que reviente
     if (!isset($_SESSION['usserLoged']) || $_SESSION['usserLoged'] === false) {
         header('Location: login.php');
     }
@@ -168,6 +171,7 @@ $totalCarrito = totalObjetosCarrito($listaObjetosCarrito);
         </tbody>
         <tfoot>
             <tr>
+                <!-- colspan para posicionamiento en este caso columna 3 -->
                 <td class="total" colspan="3">Total:</td>
                 <?php
                 ?>
@@ -193,6 +197,7 @@ $totalCarrito = totalObjetosCarrito($listaObjetosCarrito);
         </select>
 
         <label for="precio">Precio:</label>
+    <!-- step para determinar la cantidad de decimales que puede tener el campo -->
         <input name="precio" type="number" id="precio" step="0.01" required>
 
         <label for="cantidad">Cantidad:</label>
@@ -213,17 +218,7 @@ $totalCarrito = totalObjetosCarrito($listaObjetosCarrito);
 
     <script>
 
-        function calcularTotal() {
-            var total = 0;
-            var filas = document.getElementById('carrito').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-
-            for (var i = 0; i < filas.length; i++) {
-                var celdaTotal = filas[i].getElementsByTagName('td')[3];
-                total += parseFloat(celdaTotal.innerHTML);
-            }
-
-            document.getElementById('total').innerHTML = total.toFixed(2);
-        }
+        
         function productSelected() {
             var productoSeleccionado = document.getElementById('producto');
             var precioProductoSeleccionado = productoSeleccionado.options[productoSeleccionado.selectedIndex].text;

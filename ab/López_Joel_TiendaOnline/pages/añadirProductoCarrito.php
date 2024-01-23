@@ -23,6 +23,7 @@ $carritoDisponibles->execute(
     )
     );
 if ($carritoDisponibles->rowCount()> 0) {
+    //es un metodo que tiene la clase PDO, cuando hago una consulta o leo un archivo, genera una nueva variable y copia la consulta y guardala "aqui"
     $existeCarrito = $carritoDisponibles->fetch(PDO::FETCH_ASSOC);
     $carrito = array_values($existeCarrito)[0];
     $idCarrito = $existeCarrito['idcarrito'];
