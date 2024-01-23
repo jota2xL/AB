@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION)) {
+if ( !isset($_SESSION) ){
     session_start();
 }
 $isLoginSucces = false;
@@ -31,9 +31,11 @@ function loginUsuario($dni, $password)
     if ($miConsulta != null && $miConsulta->rowCount() > 0) {
         $_SESSION['usserLoged'] = true;
         $_SESSION['usserId'] = $dni;
-    } else {
+    }
+    else {
         $_SESSION['usserLoged'] = false;
     }
     header("Location: login.php");
+
 }
 ?>
