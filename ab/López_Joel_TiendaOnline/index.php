@@ -34,7 +34,7 @@ $loginCorrecto = false;
             <a class="menu__link" href="pages/tienda.php#casa">Casa</a>
             <a class="menu__link" href="pages/tienda.php#jardin">Jardín</a>
             <a class="menu__link" href="#mapa">Contacto</a>
-            <a class="menu__link" href="pages\quienessomos.html">¿Quiénes somos?</a>
+            <a class="menu__link" href="pages/quienessomos.html">¿Quiénes somos?</a>
             <?php
             if ($loginCorrecto) {
                 echo '<a class="menu__link" href="pages/logout.php">Cerrar Sesión</a>';
