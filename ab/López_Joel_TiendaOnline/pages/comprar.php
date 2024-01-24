@@ -24,5 +24,5 @@ $objetosCarrito->execute(
         'dni' => $dni
     )
 );
-header('Location: ../index.php');
+header('Location: gracias2.html');
 ?>
